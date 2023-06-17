@@ -1,7 +1,6 @@
 import { speechToText } from "./speechToText.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
-  const baseUrl = "zomm-gpt.vercel.app/";
   const meetLink = localStorage.getItem("meetingLink");
   ZoomMtg.setZoomJSLib("https://source.zoom.us/2.13.0/lib", "/av");
   // loads WebAssembly assets
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   //passWord is required for joining the meeting
 
   const response = await fetch(
-    `zomm-gpt.vercel.app/signature?meetingNumber=${meetingNumber}`,
+    `signature?meetingNumber=${meetingNumber}`,
     {
       method: "get",
     }

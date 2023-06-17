@@ -39,10 +39,7 @@ export function speechToText() {
 
       console.log(`TRANSCRIPT : ${transcript}`);
 
-      const apiResponse = await fetch(
-        
-        `zomm-gpt.vercel.app/completions?message=${transcript}`
-      );
+      const apiResponse = await fetch(`completions?message=${transcript}`);
       const responseObject = await apiResponse.json();
       const gptResponse = responseObject.message;
 
@@ -50,7 +47,7 @@ export function speechToText() {
 
       isTextToSpeechPlaying = true;
 
-      await fetch(`zomm-gpt.vercel.app/textToSpeech/?payload=${gptResponse}`, {
+      await fetch(`textToSpeech/?payload=${gptResponse}`, {
         method: "POST",
       }).then((val) => {
         console.log("RETURNED AFTER API CALL");
