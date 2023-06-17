@@ -11,14 +11,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   ZoomMtg.i18n.load("en-US");
   ZoomMtg.i18n.reload("en-US");
 
-
   //console.log("added above creds");
-  const apiResponse = await fetch(
-    `zomm-gpt.vercel.app/credentials?meetLink=${meetLink}`,
-    {
-      method: "GET",
-    }
-  );
+  const apiResponse = await fetch(`credentials?meetLink=${meetLink}`, {
+    method: "GET",
+  });
   const jsonCredentials = await apiResponse.json();
   const { meetingNumber, passWord, leaveUrl, sdkKey, userName } =
     jsonCredentials;
