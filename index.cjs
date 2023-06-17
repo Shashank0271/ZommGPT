@@ -39,7 +39,6 @@ app.get("/signature", function (req, res) {
   return res.json({
     signature: signature,
   });
-  
 });
 
 app.get("/credentials", async function (req, res) {
@@ -90,6 +89,7 @@ app.get("/completions", async function (req, res) {
 app.post("/textToSpeech", async function (req, res) {
   console.log("Entered text to speech api");
   let { payload } = req.query;
+  console.log("TEXT TO SPEECH PAYLOAD:", payload);
   say.speak(payload, null, 1.0, (err) => {
     if (err) {
       return console.error(err);
