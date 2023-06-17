@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   ZoomMtg.i18n.load("en-US");
   ZoomMtg.i18n.reload("en-US");
 
-  //console.log("added above creds");
   const apiResponse = await fetch(`credentials?meetLink=${meetLink}`, {
     method: "GET",
   });

@@ -3,7 +3,7 @@ export function speechToText() {
   const pageReloaded = localStorage.getItem("pageReloaded");
   if (!pageReloaded) {
     localStorage.setItem("pageReloaded", "true");
-    // window.location.reload();
+    window.location.reload();
   } else if (
     "SpeechRecognition" in window ||
     "webkitSpeechRecognition" in window
@@ -25,7 +25,6 @@ export function speechToText() {
       if (isTextToSpeechPlaying) {
         console.log("RETURN AS TTS IS PLAYING RN! ");
         return;
-        F;
       }
 
       const numberOfResults = event.results.length;
