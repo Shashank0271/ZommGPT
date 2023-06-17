@@ -86,18 +86,6 @@ app.get("/completions", async function (req, res) {
   });
 });
 
-app.post("/textToSpeech", async function (req, res) {
-  console.log("Entered text to speech api");
-  let { payload } = req.query;
-  console.log("TEXT TO SPEECH PAYLOAD:", payload);
-  say.speak(payload, null, 1.0, (err) => {
-    if (err) {
-      return console.error(err);
-    }
-    console.log("Text has been spoken.");
-    res.status(200).json({});
-  });
-});
 
 app.listen(4000, function () {
   console.log("Server started on port 4000");
