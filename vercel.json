@@ -1,12 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "index.js", "use": "@now/node" }
-    ],
-    "routes": [
-      { "src": "/api/(.*)", "dest": "index.js" },
-      { "src": "/zoom.html", "dest": "zoom.html" },
-      { "src": "/(.*)", "dest": "/public/$1" }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@now/node" },
+    { "src": "public/**/*", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "index.js" },
+    { "src": "/zoom.html", "dest": "zoom.html" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
