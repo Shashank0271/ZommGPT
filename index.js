@@ -18,11 +18,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/inputlink.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/index.html", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
+app.get("/zoom.html", function (req, res) {
+  res.sendFile(__dirname + "/zoom.html");
 });
 
 app.get("/signature", function (req, res) {
