@@ -15,7 +15,7 @@
     "start": "node server.js"
   },
   "name": "sgpt",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "main": "index.js",
   "author": "",
