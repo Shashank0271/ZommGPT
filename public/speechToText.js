@@ -39,7 +39,7 @@ export function speechToText() {
       console.log(`TRANSCRIPT : ${transcript}`);
 
       const apiResponse = await fetch(
-        `http://localhost:4000/completions?message=${transcript}`
+        `zomm-gpt.vercel.app/completions?message=${transcript}`
       );
       const responseObject = await apiResponse.json();
       const gptResponse = responseObject.message;
@@ -49,7 +49,7 @@ export function speechToText() {
       isTextToSpeechPlaying = true;
 
       await fetch(
-        `http://localhost:4000/textToSpeech/?payload=${gptResponse}`,
+        `zomm-gpt.vercel.app/textToSpeech/?payload=${gptResponse}`,
         {
           method: "POST",
         }
