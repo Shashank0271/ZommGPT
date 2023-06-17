@@ -1,4 +1,4 @@
-import { speechToText } from "./speechToText.cjs";
+import { speechToText } from "./speechToText.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const meetLink = localStorage.getItem("meetingLink");
