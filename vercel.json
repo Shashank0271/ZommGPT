@@ -6,6 +6,7 @@
     ],
     "routes": [
       { "src": "/api/(.*)", "dest": "index.js" },
+      { "src": "/zoom.html", "dest": "zoom.html" },
       { "src": "/(.*)", "dest": "public/$1" }
     ]
   }
