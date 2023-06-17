@@ -47,20 +47,28 @@ export function speechToText() {
 
       isTextToSpeechPlaying = true;
 
-      await fetch(`textToSpeech?payload=${gptResponse}`, {
-        method: "POST",
-      }).then((val) => {
-        console.log("RETURNED AFTER API CALL");
+      // await fetch(`textToSpeech?payload=${gptResponse}`, {
+      //   method: "POST",
+      // }).then((val) => {
+      //   console.log("RETURNED AFTER API CALL");
 
+      //   setTimeout(() => {
+      //     //we have to add a delay because the onresult function captures the spken words again
+      //     //it immediately fires after we return from the api call and captures the last spoken
+      //     //input again , and the bot gets stuck in an infinite loop replying to its own messages
+      //     //(as console.log("RETURN AS TTS IS PLAYING RN! "); is being executed after every api response)
+      //     //so after one input ouput cycle there has to be a gap of 4 seconds before the next one
+      //     isTextToSpeechPlaying = false;
+      //   }, 4000);
+      // });
+      const msg = new SpeechSynthesisUtterance();
+      msg.text = gptResponse;
+      msg.onend = function () {
         setTimeout(() => {
-          //we have to add a delay because the onresult function captures the spken words again
-          //it immediately fires after we return from the api call and captures the last spoken
-          //input again , and the bot gets stuck in an infinite loop replying to its own messages
-          //(as console.log("RETURN AS TTS IS PLAYING RN! "); is being executed after every api response)
-          //so after one input ouput cycle there has to be a gap of 4 seconds before the next one
           isTextToSpeechPlaying = false;
         }, 4000);
-      });
+      };
+      speechSynthesis.speak(msg);
     };
 
     recognition.onend = function () {
