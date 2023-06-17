@@ -47,7 +47,7 @@ export function speechToText() {
 
       isTextToSpeechPlaying = true;
 
-      await fetch(`textToSpeech/?payload=${gptResponse}`, {
+      await fetch(`textToSpeech?payload=${gptResponse}`, {
         method: "POST",
       }).then((val) => {
         console.log("RETURNED AFTER API CALL");
