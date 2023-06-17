@@ -24,7 +24,7 @@ export function speechToText() {
       //stop listening
       if (isTextToSpeechPlaying) {
         console.log("RETURN AS TTS IS PLAYING RN! ");
-        return;
+        return;F
       }
 
       const numberOfResults = event.results.length;
