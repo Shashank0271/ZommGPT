@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 const say = require("say");
 const path = require("path");
-const generateZoomSignature = require("./utils/createSignature");
+const generateZoomSignature = require("./utils/createSignature.cjs");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
