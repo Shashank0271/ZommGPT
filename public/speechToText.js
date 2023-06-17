@@ -24,7 +24,8 @@ export function speechToText() {
       //stop listening
       if (isTextToSpeechPlaying) {
         console.log("RETURN AS TTS IS PLAYING RN! ");
-        return;F
+        return;
+        F;
       }
 
       const numberOfResults = event.results.length;
@@ -39,6 +40,7 @@ export function speechToText() {
       console.log(`TRANSCRIPT : ${transcript}`);
 
       const apiResponse = await fetch(
+        
         `zomm-gpt.vercel.app/completions?message=${transcript}`
       );
       const responseObject = await apiResponse.json();
@@ -48,12 +50,9 @@ export function speechToText() {
 
       isTextToSpeechPlaying = true;
 
-      await fetch(
-        `zomm-gpt.vercel.app/textToSpeech/?payload=${gptResponse}`,
-        {
-          method: "POST",
-        }
-      ).then((val) => {
+      await fetch(`zomm-gpt.vercel.app/textToSpeech/?payload=${gptResponse}`, {
+        method: "POST",
+      }).then((val) => {
         console.log("RETURNED AFTER API CALL");
 
         setTimeout(() => {
