@@ -11,8 +11,6 @@ A bot built using using Node.js which enters Zooms when provided with a meeting 
 - Implement text-to-speech which converts the GPT response into speech which is passed through Zoom.
 - Deployed on Vercel
 
-## Deployment Link
 
-[link](zomm-gpt.vercel.app)
 
 
