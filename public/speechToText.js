@@ -1,14 +1,9 @@
 export function speechToText() {
   let isTextToSpeechPlaying = false;
-  const pageReloaded = localStorage.getItem("pageReloaded");
-  if (!pageReloaded) {
-    localStorage.setItem("pageReloaded", "true");
-    // window.location.reload();
-  } else if (
+  if (
     "SpeechRecognition" in window ||
     "webkitSpeechRecognition" in window
   ) {
-    localStorage.removeItem("pageReloaded");
     console.log("SPEECH RECOGNITION IS SUPPORTED");
     window.SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
