@@ -14,7 +14,7 @@ A bot built using using Node.js which enters Zooms when provided with a meeting 
 
 
 ### Note
-It might happen that on joining the meet the page takes too much time to load , or speech recognition does not start(see console)
+It might happen that on joining the meet via link the page takes too much time to load , or speech recognition does not start(see console)
 Just wait for 3-5 seconds and refresh the page .
 
 
