@@ -18,6 +18,8 @@ Sometimes , it might happen that on joining the meet via link the page takes too
 Just wait for 3-5 seconds and refresh the page .
 Make sure you accept the 'admit' request for the bot from the admin side (person who created the meeting)
 
+[Youtube Demo](https://youtu.be/vnplGzI6r24)
+
 
 
 
